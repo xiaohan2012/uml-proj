@@ -1,4 +1,7 @@
-N = 10000;
+%to ensure reproducible result
+rng (123456);
+
+N = 1000;
 
 figure (1);
 clf;
@@ -56,6 +59,8 @@ ylim ([-4, 4]);
 
 hold on;
 
+saveas (gcf, 'img/scatter_points.png');
+
 %##############################
 %Question 3 (completed after question 2)
 %Plot the principla components of the first two datasets
@@ -81,6 +86,8 @@ subplot (2, 2, 4);
 
 plotv (U*10, 'r');
 
+saveas (gcf, 'img/eigen_vectors.png');
+
 %##############################
 %Question 4
 %project the data on each of both components
@@ -98,6 +105,8 @@ D
 
 subplot (2, 1, 1); hist (projected_data (:, 1), 20);
 subplot (2, 1, 2); hist (projected_data (:, 2), 20);
+
+saveas (gcf, 'img/histogram.png');
 
 %##############################
 %Question 5
@@ -128,6 +137,7 @@ disp ('True eigenvalue (D) and calculated eigenvalue (D1) ');
 D
 D1
 
+saveas (gcf, 'img/artificial_data.png');
 
 %##############################
 %Question 6
@@ -161,3 +171,5 @@ reconstructed = repmat(U (1, :), N, 1) .* repmat(data * U (1, :)', ...
                                                   1, 2);
 disp ('Error introduced by reconstructing using the first eigen vector');
 error2 = sum(sum((data - reconstructed) .^ 2)) / N
+
+saveas (gcf, 'img/reconstruction.png');
