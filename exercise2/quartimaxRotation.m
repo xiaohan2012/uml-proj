@@ -28,7 +28,6 @@ while 1
 
     V = A * U;
     J_rot_new = sum(sum(V .^ 4));
-    J_rot_new
 
     if max (abs((J_rot_old - J_rot_new) ./ J_rot_old)) < eps %converge
         break
