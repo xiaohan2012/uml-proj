@@ -9,7 +9,7 @@ clf;
 %Question 1
 %inmitate the 4 plots
 %##############################
-disp ('Question 1....');
+disp ('Question 1: approximating the 4 plots ');
 %plot 1
 data1 = gendata ([0,0], [2,-1; -1, 2], N);
 
@@ -59,15 +59,18 @@ ylim ([-4, 4]);
 
 hold on;
 
+disp ('Press any key to continue...')
+pause
+
 saveas (gcf, 'img/scatter_points.png');
 
 %##############################
 %Question 3 (completed after question 2)
 %Plot the principla components of the first two datasets
 %##############################
-disp ('Question 3....');
+disp ('Question 3: plot the principla components of the first two datasets');
 subplot (2, 2, 1);
-[U, D] = pca (data1);
+[U, D] = pca (data1); 
 
 plotv(U * 10, 'r');
 
@@ -88,13 +91,16 @@ plotv (U*10, 'r');
 
 saveas (gcf, 'img/eigen_vectors.png');
 
+disp ('Press any key to continue...')
+pause
+
 %##############################
 %Question 4
 %project the data on each of both components
 %make a histogram for each component (20 bins)
 %compute the variance of each direction and compare it with the covariance matrix
 %##############################
-disp ('Question 4....');
+disp ('Question 4:');
 figure (2);
 clf;
 
@@ -108,12 +114,15 @@ subplot (2, 1, 2); hist (projected_data (:, 2), 20);
 
 saveas (gcf, 'img/histogram.png');
 
+disp ('Press any key to continue...')
+pause
+
 %##############################
 %Question 5
 %Artificial data
 %##############################
 disp ('Question 5....');
-U = [1 1; -1 1] ./ sqrt (2);
+U = [1 1; -1 1] ./ sqrt (2); 
 D = diag ([1, 3]);
 
 x = repmat(U (1, :), N, 1) .* repmat(randn (N, 1) * sqrt (D (1, 1)), ...
@@ -139,6 +148,9 @@ D1
 
 saveas (gcf, 'img/artificial_data.png');
 
+disp ('Press any key to continue...')
+pause
+
 %##############################
 %Question 6
 %Reduce dimension to 1, 
@@ -152,6 +164,8 @@ clf;
 
 reconstructed = repmat(U (2, :), N, 1) .* repmat(data * U (2, :)', ...
                                                   1, 2);
+
+%the first 50 data rows(original and reconstructed)
 x1 = data (1:50, 1);
 x2 = reconstructed (1:50, 1);
 y1 = data (1:50, 2);

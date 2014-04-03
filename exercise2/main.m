@@ -37,6 +37,9 @@ ylabel ('y: Second principal component')
 
 saveas (gcf, 'img/reproduct42.png');
 
+disp ('Press any key to continue...')
+pause
+
 %------Q2-------
 disp ('Question 2: Proportion of variance explained vs Principal component number')
 
@@ -52,6 +55,9 @@ ylabel('Proportion of variance explained')
 axis([1 5 0 1.01])
 
 saveas (gcf, 'img/variance_explained.png');
+
+disp ('Press any key to continue...')
+pause
 
 %------Q3+4-------
 disp ('Question 3&4: quartimax rotation')
@@ -79,19 +85,23 @@ xlabel('Iteration number')
 ylabel('J_{rot}')
 saveas (gcf, 'img/J_rot.png');
 
+disp ('Press any key to continue...')
+pause
+
 %--------Q5---------
 
 disp ('Question 5: reproduction of figure 5.1')
 
-A_prime = quartimaxRotation (U (:, 1:2));
+A_prime = quartimaxRotation (U (:, 1:2)); %the rotated PCs
 
-data_prime = data * A_prime
+data_prime = data * A_prime %projected data points
 
 figure (4)
 clf
 %plot the data points
 scatter (data_prime (:, 1), data_prime (:, 2), 'o');
 hold on
+
 %plot the coordinates
 line([-10, 0; 10, 0], [0, -10; 0, 10], 'Color', 'black', 'LineWidth', ...
      2)

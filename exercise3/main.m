@@ -28,6 +28,9 @@ visual(digits(:, 1:100), 10);
 title('Normalized digits');
 saveas(gcf, 'img/normalized_digits.png')
 
+disp ('Press any key to continue...')
+pause
+
 %--------------2--------------
 disp('Question 2: pca on digits')
 [U,V] = pca(digits');
@@ -44,6 +47,9 @@ saveas(gcf, 'img/variance_explained.png');
 
 disp(sprintf('The first 20 principal components expained %f%% of the variance.', sum(eigenvalues(1:20)) / sum(eigenvalues) * 100));
 
+disp ('Press any key to continue...')
+pause
+
 %--------------3--------------
 disp('Question 3: compression')
 images = digits(:, randperm(imageCount, 10));
@@ -59,6 +65,9 @@ for i = 1:length(subspace_dimension)
     visual([images, image_recons]);
     saveas(gcf, sprintf('img/image_%d.png', dimension));
 end
+
+disp ('Press any key to continue...')
+pause
 
 disp('Question 4: denoising')
 load('noisyDigits.txt')
