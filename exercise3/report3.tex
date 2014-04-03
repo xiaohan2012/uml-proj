@@ -79,7 +79,7 @@
 \section{Question 1}
 
 \begin{table}[H]
-\caption{Left: orignal first 100 digits\newline Right: preprocessed first 100 digits}
+\caption{Left: orignal first 100 digits. \newline Right: preprocessed first 100 digits}
 \centering
 \begin{tabular}{cc}
   \includegraphics[scale=.4]{original_digits} &
@@ -98,7 +98,7 @@
 
 \section{Question 2}
 
-The first 20 principal components expained 64.449582\% of the variance.
+The first 20 principal components expained 64.449582\% of the variance. The relationship between number of PC used and proportion of variance explained is given as follows:
 
 \begin{figure}[H]
   \centering
@@ -116,7 +116,7 @@ The first 20 principal components expained 64.449582\% of the variance.
 I randomly choose 10 digits from the dataset and project each of them to 1, 2, 4, 8, 16, 32, 64, 128 dimensional subspace and observed an increased level of restoration.
 
 \begin{table}[H]
-\caption{Randomly chosen digits before and after compression under PC number 1,2,4,8,16,32,64 and 128(left to right and updown)}
+\caption{Randomly chosen digits before and after compression under PC number 1,2,4,8,16,32,64 and 128(ordered from left to right and top to bottom)}
 \centering
 \begin{tabular}{cc}
 	\includegraphics[scale=.3]{image_1}&
@@ -141,6 +141,8 @@ I randomly choose 10 digits from the dataset and project each of them to 1, 2, 4
 \end{tabular}
 \end{table}
 
+A short comment: we can observe a decreasing level of reconstruction error as the subspace dimension increases, which is expected.
+
 %----------------------------------------------------------------------------------------
 %       PROBLEM 4
 %----------------------------------------------------------------------------------------
@@ -150,7 +152,7 @@ I randomly choose 10 digits from the dataset and project each of them to 1, 2, 4
 I used the first 32 PC for denoising and the digits before and after denoising are as followed;
 
 \begin{table}[H]
-\caption{Denoising using 32 PC.\newline Left: original noisy digits \newline Right:denoised digits}
+\caption{Denoising using 32 PC.\newline Left: original noisy digits. \newline Right:denoised digits}
 \centering
 \begin{tabular}{cc}
     \includegraphics[scale=.4]{noisy_digits} &
